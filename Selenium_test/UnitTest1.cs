@@ -37,7 +37,12 @@ namespace Selenium_test
         public void TestMethod2()
         {
             //TODO:
-            return;
+            FirstService mySvc = new FirstService();
+            num1 = 5
+            num2 = 10
+            num3 = 15
+            result = mySvc.Add(num1, num2);
+            Assert(num3 == result);
         }
         public void TestMethod3()
         {
