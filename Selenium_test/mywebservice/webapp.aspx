@@ -11,7 +11,7 @@
 <html>
    <head> </head>
    
-   <body>
+   <body bgcolor="rgb(128,128,128)">
       <form runat="server">
          <p>
             <em>First Number</em>:
