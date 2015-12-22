@@ -38,10 +38,10 @@ namespace Selenium_test
         {
             //TODO:
             FirstService mySvc = new FirstService();
-            num1 = 5;
-            num2 = 10;
-            num3 = 15;
-            result = mySvc.Add(num1, num2);
+            int num1 = 5;
+            int num2 = 10;
+            int num3 = 15;
+            int result = mySvc.Add(num1, num2);
             Assert(num3 == result);
         }
         public void TestMethod3()
