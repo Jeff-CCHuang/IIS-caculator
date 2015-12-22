@@ -39,5 +39,10 @@ namespace Selenium_test
             //TODO:
             return;
         }
+        public void TestMethod3()
+        {
+            //FIXME:
+            return
+        }
     }
 }
