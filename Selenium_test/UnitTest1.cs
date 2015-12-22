@@ -42,7 +42,7 @@ namespace Selenium_test
         public void TestMethod3()
         {
             //FIXME:
-            return
+            return;
         }
     }
 }
