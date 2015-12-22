@@ -34,5 +34,10 @@ namespace Selenium_test
             //Step d close website
             driver.Quit();
         }
+        public void TestMethod2()
+        {
+            //TODO:
+            return;
+        }
     }
 }
