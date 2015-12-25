@@ -37,6 +37,7 @@ namespace Selenium_test
         public void TestMethod2()
         {
             //TODO:
+            #warning test warning function
             return;
         }
         public void TestMethod3()
