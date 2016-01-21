@@ -63,6 +63,7 @@ namespace Selenium_test
             System.Threading.Thread.Sleep(5000);
 
             TestClean(driver);
+            System.Threading.Thread.Sleep(5000);
 
             //Step d close website
             driver.Quit();
