@@ -1,10 +1,33 @@
 <%@ Page Language="C#" %>
 <script runat="server">
    void runSrvice_Click(Object sender, EventArgs e){
+
       FirstService mySvc = new FirstService();
+
+      int first_num = Int32.Parse(txtNum1.Text);
+      int second_num = Int32.Parse(txtNum2.Text);
+      int add_result = mySvc.Add(first_num , second_num);
+      int mul_result = mySvc.Multiply(first_num, second_num);
+
+      int ret = mySvc.SetData(first_num, second_num, add_result, mul_result);
+
       Label1.Text = mySvc.SayHello();
-      Label2.Text = mySvc.Add(Int32.Parse(txtNum1.Text),  Int32.Parse(txtNum2.Text)).ToString();
-      Label3.Text = mySvc.Multiply(Int32.Parse(txtNum1.Text),  Int32.Parse(txtNum2.Text)).ToString();
+      Label2.Text = first_num.ToString() + " + " + second_num.ToString() + " = " + add_result.ToString();
+      Label3.Text = first_num.ToString() + " * " + second_num.ToString() + " = " + mul_result.ToString();
+   }
+   void getResult_Click(Object sender, EventArgs e){
+      FirstService mySvc = new FirstService();
+      int count = mySvc.GetDataCount();
+      Table1.Rows.Add(mySvc.InitTable());
+      while (count > 0)
+      {
+          Table1.Rows.Add(mySvc.GetDataById(count));
+          count--;
+      }
+   }
+   void cleanResult_Click(Object sender, EventArgs e){
+      FirstService mySvc = new FirstService();
+      mySvc.CleanData();
    }
 </script>
 
@@ -29,24 +52,37 @@
 			
          <p>
             <em>Hello world Service</em> :
-            <asp:Label id="Label1" runat="server" Font-Underline="True">Label</asp:Label>
+            <asp:Label id="Label1" runat="server" Font-Underline="True"></asp:Label>
          </p>
 
          <p>
             <em>Add Service</em> :
-            & <asp:Label id="Label2" runat="server" Font-Underline="True">Label</asp:Label>
+             <asp:Label id="Label2" runat="server" Font-Underline="True"></asp:Label>
          </p>
 
           <p>
             <em>Multiply Service</em> :
-            & <asp:Label id="Label3" runat="server" Font-Underline="True">Label</asp:Label>
+             <asp:Label id="Label3" runat="server" Font-Underline="True"></asp:Label>
          </p>
 			
          <p align="left">
             <asp:Button id="runSrvice" onclick="runSrvice_Click" runat="server"  Text="Execute"></asp:Button>
+            <asp:Button id="getResult" onclick="getResult_Click" runat="server"  Text="Show"></asp:Button>
+            <asp:Button id="cleanResult" onclick="cleanResult_Click" runat="server"  Text="Clean"></asp:Button>
          </p>
-			
+	<div>
+
+	    <h3></h3>
+	    <asp:Table id="Table1" 
+        	GridLines="Both" 
+	        HorizontalAlign="Center" 
+	        Font-Names="Verdana" 
+        	Font-Size="8pt" 
+	        CellPadding="15" 
+        	CellSpacing="0" 
+	        Runat="server"/>
+
+	</div>
       </form>
-      
    </body>
 </html>
