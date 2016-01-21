@@ -14,6 +14,7 @@
       Label1.Text = mySvc.SayHello();
       Label2.Text = first_num.ToString() + " + " + second_num.ToString() + " = " + add_result.ToString();
       Label3.Text = first_num.ToString() + " * " + second_num.ToString() + " = " + mul_result.ToString();
+      clean();
    }
    void getResult_Click(Object sender, EventArgs e){
       FirstService mySvc = new FirstService();
@@ -28,6 +29,11 @@
    void cleanResult_Click(Object sender, EventArgs e){
       FirstService mySvc = new FirstService();
       mySvc.CleanData();
+   }
+   void clean()
+   {
+      txtNum1.Text = "";
+      txtNum2.Text = "";
    }
 </script>
 
