@@ -32,7 +32,7 @@ public class FirstService : WebService
    [WebMethod]
    public int SetData(int first_num, int second_num, int add_result, int mul_result)
    {
-      string strConn = "server=WINIIS\\SQLEXPRESS;database=test;User ID=test;Password=password;Trusted_Connection=True;";
+      string strConn = "server=GEMINIG-A1MML3K\\SQLEXPRESS;database=iis_sample_db;User ID=test;Password=password;Trusted_Connection=True;";
       SqlConnection openCon=new SqlConnection(strConn);
       openCon.Open();
       string saveStaff = "INSERT into cal_result (first_num, second_num, add_result, mul_result) VALUES (@first_num, @second_num, @add_result, @mul_result)";
@@ -50,7 +50,7 @@ public class FirstService : WebService
    public int GetDataCount()
    {
       string data = "";
-      string strConn = "server=WINIIS\\SQLEXPRESS;database=test;User ID=test;Password=password;Trusted_Connection=True;";
+      string strConn = "server=GEMINIG-A1MML3K\\SQLEXPRESS;database=iis_sample_db;User ID=test;Password=password;Trusted_Connection=True;";
       SqlConnection myConn = new SqlConnection(strConn);
       myConn.Open();
       String strSQL = @"select count(*) from cal_result";
@@ -84,7 +84,7 @@ public class FirstService : WebService
    public TableRow GetDataById(int id)
    {
       TableRow r = new TableRow();
-      string strConn = "server=WINIIS\\SQLEXPRESS;database=test;User ID=test;Password=password;Trusted_Connection=True;";
+      string strConn = "server=GEMINIG-A1MML3K\\SQLEXPRESS;database=iis_sample_db;User ID=test;Password=password;Trusted_Connection=True;";
       SqlConnection myConn = new SqlConnection(strConn);
       myConn.Open();
       String strSQL = String.Format("select * from cal_result where id='{0}'", id);
@@ -118,7 +118,7 @@ public class FirstService : WebService
    [WebMethod]
    public void CleanData()
    {
-      string strConn = "server=WINIIS\\SQLEXPRESS;database=test;User ID=test;Password=password;Trusted_Connection=True;";
+      string strConn = "server=GEMINIG-A1MML3K\\SQLEXPRESS;database=iis_sample_db;User ID=test;Password=password;Trusted_Connection=True;";
       SqlConnection myConn = new SqlConnection(strConn);
       myConn.Open();
       String strSQL = @"truncate table cal_result";
