@@ -40,7 +40,7 @@
 <html>
    <head> </head>
    
-   <body bgcolor="rgb(255,128,128)">
+   <body bgcolor="rgb(255,128,0)">
       <form runat="server">
          <p>
             <em>First Number</em>:
