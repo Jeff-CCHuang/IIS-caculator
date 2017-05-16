@@ -20,7 +20,7 @@ public class FirstService : WebService
    [WebMethod]
    public String SayHello()
    {
-   return "Hello A+";
+   return "Hello World!";
    }
 
    [WebMethod]
